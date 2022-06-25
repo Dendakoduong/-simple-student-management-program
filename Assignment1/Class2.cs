@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,26 +50,26 @@ namespace Assignment1
             max = Convert.ToSingle(end);
 
             Console.WriteLine("Here's the list of students:");
-            
-            foreach (Student stu in listofStudents)
+
+            foreach (var item in listofStudents)
             {
-                if (stu.score >= min && stu.score <= max)
+                if (item.score >= min && item.score <= max)
                 {
-                    stu.Output();
+                    item.Output();
                 }
             }
-            
+    
         }
         public void findStudentbyRanked()
         {
             Console.WriteLine("Enter the students' ranked: ");
             string rank = Console.ReadLine();
             Console.WriteLine("Here's the list of students:");
-            foreach (Student stu in listofStudents)
+            foreach (var item in listofStudents)
             {
-                if (stu.Getrank.Equals(rank, StringComparison.OrdinalIgnoreCase))
+                if (item.Getrank.Equals(rank, StringComparison.OrdinalIgnoreCase))
                 {
-                    stu.Output();
+                    item.Output();
                 }
             }
 
@@ -81,14 +81,14 @@ namespace Assignment1
             Console.WriteLine("Enter the student's ID you want to search: ");
             string id = Console.ReadLine();
             
-            foreach (Student stu in listofStudents)
+            foreach (var item in listofStudents)
             {
-                if (stu.studentID == id)
+                if (item.studentID == id)
                 {
-                    stu.Output();
+                    item.Output();
                     break;
                 }
-                else if (stu.studentID != id)
+                else if (item.studentID != id)
                 {
                     Console.WriteLine("No student with this ID.");
                 }
