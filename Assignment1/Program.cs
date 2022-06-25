@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,7 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            Console.Title = "Login";
+            Console.Title = "Assignment 1";
             Console.Write("Sign In   \n");
             Console.Write("---------------\n");
             Console.Write("Username: ");
@@ -59,51 +59,47 @@ namespace Assignment1
                 int option = Convert.ToInt32(Console.ReadLine());
                 ListofStudents listofStudents = new ListofStudents();
 
-                if (option == 1)
+                //start from here
+                switch (option)
                 {
-                    listofStudents.Input();
-                    Console.WriteLine("\n");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Student added successfully!\n");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("*******");
-                    listofStudents.Output();
+                    case 1:
+                        listofStudents.Input();
+                        Console.WriteLine("\n");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Student added successfully!\n");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine("*******");
+                        listofStudents.Output();
+                        break;
+                    case 2:
+                        listofStudents.findStudentWithStudentID();
+                        break;
+                    case 3:
+                        listofStudents.findStudentbyScoreRange();
+                        break;
+                    case 4:
+                        listofStudents.findStudentbyRanked();
+                        break;
+                    case 5:
+                        listofStudents.sortStudentbyScore();
+                        break;
+                    case 6:
+                        listofStudents.showTop3();
+                        break;
+                    case 7:
+                        listofStudents.findStudentWithStudentID();
+                        listofStudents.Output();
+                        break;
+                    case 8:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. The program will automatically exit.");
+                        Thread.Sleep(1000);
+                        Environment.Exit(0);
+                        break;
                 }
-                else if (option == 2)
-                {
-                    listofStudents.findStudentWithStudentID();
-                }
-                else if (option == 3)
-                {
-                    listofStudents.findStudentbyScoreRange();
-                }
-                else if (option == 4)
-                {
-                    listofStudents.findStudentbyRanked();
-                }
-                else if (option == 5)
-                {
-                    listofStudents.sortStudentbyScore();
-                }
-                else if (option == 6)
-                {
-                    listofStudents.showTop3();
-                }
-                else if (option == 7)
-                {
-                    listofStudents.findStudentWithStudentID();
-                    listofStudents.Output();
-                }
-                else if (option == 8)
-                {
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    Console.WriteLine("Invalid option. The program will automatically exit.");
-                    Thread.Sleep(1000);
-                    Environment.Exit(0);
-                }
+                
                 Console.WriteLine("-------");
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadLine();
